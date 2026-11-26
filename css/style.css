@@ -1,0 +1,246 @@
+
+/* =====================================
+   OGUTU JANE — PERSONAL BRANDING
+   Modern Corporate Technology Design
+===================================== */
+
+:root {
+    --navy: #101D32;
+    --blue: #2563EB;
+    --light-blue: #A9C8FF;
+    --slate: #263B56;
+    --off-white: #F4F6F9;
+    --white: #FFFFFF;
+    --text: #263447;
+    --muted: #718096;
+    --border: #E2E8F0;
+
+    --transition: 0.3s ease;
+}
+
+/* RESET */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: var(--off-white);
+    color: var(--text);
+    line-height: 1.7;
+}
+
+/* NAVIGATION */
+
+#header {
+    background: var(--navy);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar {
+    max-width: 1200px;
+    margin: auto;
+    padding: 18px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    color: var(--white);
+    text-decoration: none;
+    font-size: 1.8rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.logo span {
+    color: var(--blue);
+}
+
+.nav-links {
+    display: flex;
+    gap: 28px;
+    list-style: none;
+}
+
+.nav-links a {
+    color: #DCE5F2;
+    text-decoration: none;
+    font-size: 0.92rem;
+    transition: var(--transition);
+}
+
+.nav-links a:hover {
+    color: var(--light-blue);
+}
+
+/* HERO SECTION */
+
+.hero {
+    min-height: 85vh;
+    background:
+        radial-gradient(
+            circle at 85% 20%,
+            rgba(37, 99, 235, 0.22),
+            transparent 35%
+        ),
+        linear-gradient(120deg, var(--navy), var(--slate));
+
+    display: flex;
+    align-items: center;
+    padding: 90px 30px;
+}
+
+.hero-content {
+    max-width: 1200px;
+    width: 100%;
+    margin: auto;
+    color: var(--white);
+}
+
+.eyebrow {
+    color: var(--light-blue);
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+    margin-bottom: 24px;
+}
+
+.hero h1 {
+    font-size: clamp(3rem, 7vw, 5.5rem);
+    line-height: 1.1;
+    margin-bottom: 15px;
+    font-weight: 800;
+}
+
+.hero h2 {
+    font-size: clamp(1.3rem, 3vw, 2.2rem);
+    color: var(--light-blue);
+    margin-bottom: 25px;
+    font-weight: 500;
+}
+
+.hero-content > p:not(.eyebrow) {
+    max-width: 680px;
+    color: #DCE5F2;
+    font-size: 1.08rem;
+    margin-bottom: 35px;
+}
+
+/* BUTTONS */
+
+.hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 13px 26px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 700;
+    transition: var(--transition);
+}
+
+.btn-primary {
+    background: var(--blue);
+    color: var(--white);
+}
+
+.btn-primary:hover {
+    background: #1D4ED8;
+    transform: translateY(-3px);
+}
+
+.btn-secondary {
+    border: 1px solid var(--light-blue);
+    color: var(--white);
+}
+
+.btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateY(-3px);
+}
+
+/* GENERAL SECTIONS */
+
+main section:not(.hero) {
+    max-width: 1200px;
+    margin: auto;
+    padding: 90px 30px;
+    scroll-margin-top: 75px;
+}
+
+main section:not(.hero) h2 {
+    color: var(--navy);
+    font-size: 2rem;
+    margin-bottom: 25px;
+}
+
+/* FOOTER */
+
+footer {
+    background: var(--navy);
+    color: #DCE5F2;
+    text-align: center;
+    padding: 25px;
+    font-size: 0.9rem;
+}
+
+/* RESPONSIVE DESIGN */
+
+@media (max-width: 850px) {
+    .navbar {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .nav-links {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 15px 22px;
+    }
+
+    .hero {
+        min-height: 75vh;
+    }
+}
+
+@media (max-width: 500px) {
+    .navbar {
+        padding: 15px;
+    }
+
+    .nav-links {
+        gap: 10px 15px;
+    }
+
+    .nav-links a {
+        font-size: 0.82rem;
+    }
+
+    .hero {
+        padding: 70px 22px;
+    }
+
+    main section:not(.hero) {
+        padding: 65px 22px;
+    }
+
+    .hero-actions {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
