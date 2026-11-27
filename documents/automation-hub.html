@@ -1,0 +1,140 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Automation Hub: practical business process automation solutions for recurring invoices and delivery documentation.">
+  <meta name="author" content="Ogutu Jane">
+  <meta name="theme-color" content="#101D32">
+  <title>Automation Hub | Project Documentation — Ogutu Jane</title>
+  <style>
+    :root { --navy:#101D32; --blue:#2878c8; --ink:#263449; --muted:#64748b; --line:#e2e8f0; --paper:#fff; --soft:#f4f7fb; }
+    * { box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body { margin:0; background:var(--soft); color:var(--ink); font-family:Inter,Segoe UI,Arial,sans-serif; line-height:1.72; }
+    .topbar { position:sticky; top:0; z-index:10; background:rgba(16,29,50,.97); color:#fff; border-bottom:1px solid rgba(255,255,255,.12); }
+    .topbar-inner { max-width:1120px; margin:auto; padding:14px 24px; display:flex; justify-content:space-between; align-items:center; gap:16px; }
+    .brand { color:#fff; text-decoration:none; font-weight:800; letter-spacing:.02em; }
+    .back { color:#dbeafe; text-decoration:none; font-size:.92rem; font-weight:650; }
+    .back:hover { color:#fff; text-decoration:underline; }
+    .hero { background:linear-gradient(135deg,#101d32,#1c3b61); color:#fff; padding:58px 24px 52px; }
+    .hero-inner { max-width:920px; margin:auto; }
+    .eyebrow { color:#9cc9f7; font-size:.76rem; font-weight:800; letter-spacing:.16em; text-transform:uppercase; }
+    .hero h1 { margin:10px 0 8px; font-size:clamp(2rem,5vw,3.25rem); line-height:1.12; }
+    .hero p { max-width:760px; margin:10px 0 0; color:#d8e4f2; font-size:1.05rem; }
+    .meta { display:flex; flex-wrap:wrap; gap:10px; margin-top:22px; }
+    .meta span { border:1px solid rgba(255,255,255,.22); border-radius:999px; padding:5px 12px; color:#e6effa; font-size:.82rem; }
+    main { max-width:920px; margin:34px auto 72px; padding:0 20px; }
+    article { background:var(--paper); border:1px solid var(--line); border-radius:16px; padding:clamp(24px,5vw,54px); box-shadow:0 12px 36px rgba(16,29,50,.06); }
+    h2 { margin:2.2em 0 .75em; padding-bottom:.45em; border-bottom:1px solid var(--line); color:var(--navy); font-size:1.65rem; line-height:1.3; }
+    h2:first-child { margin-top:.4em; }
+    h3 { margin:1.7em 0 .5em; color:#183c63; font-size:1.18rem; }
+    p { margin:.75em 0; }
+    li { margin:.35em 0; padding-left:.15em; }
+    ul,ol { padding-left:1.45em; }
+    a { color:var(--blue); }
+    strong { color:#1b2e48; }
+    .project { margin-top:2em; padding:22px 24px; border:1px solid var(--line); border-radius:12px; background:#fbfdff; }
+    .project h3 { margin-top:0; }
+    .status { display:inline-block; margin-top:8px; padding:4px 10px; border-radius:999px; background:#eef3f8; color:#334155; font-size:.82rem; font-weight:700; }
+    .footer { max-width:920px; margin:-42px auto 42px; padding:0 20px; color:var(--muted); text-align:center; font-size:.88rem; }
+    @media (max-width:640px) { .topbar-inner { padding:12px 16px; } .hero { padding:42px 20px; } main { margin-top:18px; padding:0 12px; } article { padding:22px 18px; border-radius:12px; } }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a class="brand" href="../index.html">OJ.</a>
+      <a class="back" href="../index.html#projects">Back to Portfolio</a>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="eyebrow">Project 03 · Business Process Automation</div>
+      <h1>Automation Hub</h1>
+      <p>A collection of practical automation solutions designed to reduce repetitive work, introduce controlled workflows and improve the reliability of business operations.</p>
+      <div class="meta">
+        <span>Python</span>
+        <span>Django</span>
+        <span>React</span>
+        <span>SAP Integration</span>
+        <span>Workflow Automation</span>
+      </div>
+    </div>
+  </section>
+
+  <main>
+    <article>
+      <h2>Project Profile</h2>
+      <p><strong>What it does:</strong> The Automation Hub brings together business process automation solutions that streamline recurring financial administration and document-handling workflows.</p>
+      <p><strong>Why it was developed:</strong> Repetitive manual activities can consume staff time, create avoidable processing delays and make it harder to maintain consistent records. The hub explores how structured workflows, validation and system integration can address these challenges.</p>
+      <p><strong>How it works:</strong> Each solution takes defined business inputs, applies processing and validation rules, interacts with relevant business systems where configured, and records outcomes for review.</p>
+      <p><strong>Business value:</strong> The solutions aim to reduce manual effort, improve process consistency, strengthen traceability and give users clearer visibility of exceptions requiring attention.</p>
+
+      <h2>Automation Solutions</h2>
+
+      <section class="project">
+        <h3>Automation 01 — Recurring Invoice Automation</h3>
+        <span class="status">Development and testing stage</span>
+        <p><strong>Purpose:</strong> Streamlines the preparation and controlled processing of recurring monthly supplier invoices.</p>
+        <h4>Workflow</h4>
+        <ol>
+          <li>Configure reusable invoice templates with supplier, expense, accounting and schedule details.</li>
+          <li>Generate invoices for each due period while preventing duplicate records for the same template and period.</li>
+          <li>Route pending invoices through an approval process with role-based access controls.</li>
+          <li>Synchronise approved invoices with SAP Business One through an integration workflow.</li>
+          <li>Record actions in an audit trail and track notification and processing failures.</li>
+        </ol>
+        <p><strong>Technology:</strong> Python, Django, React, Vite, SAP Business One Service Layer and SAP HANA.</p>
+        <p><strong>Implemented features:</strong> Authentication and user roles, recurring templates, invoice generation, duplicate prevention, approval controls, audit logging, email records and dry-run synchronisation.</p>
+        <p><strong>Current status:</strong> Core workflows have been developed and tested in a development environment. A successful SAP invoice-posting test, production configuration and hosting remain outstanding. The first posting test did not create an invoice.</p>
+      </section>
+
+      <section class="project">
+        <h3>Automation 02 — Delivery Invoices</h3>
+        <span class="status">Development testing completed; production transition pending</span>
+        <p><strong>Purpose:</strong> Automates the matching of digital delivery-proof documents to their corresponding delivery records in an enterprise system.</p>
+        <h4>Workflow</h4>
+        <ol>
+          <li>Scan a designated document folder for delivery-proof PDF files.</li>
+          <li>Extract a delivery reference from each filename using a defined matching rule.</li>
+          <li>Compare the reference against eligible delivery records.</li>
+          <li>Classify each document for processing, skipping or manual review.</li>
+          <li>For eligible records, update the configured document-link field through the SAP integration.</li>
+          <li>Read back the updated value to verify the result and produce processing reports.</li>
+        </ol>
+        <p><strong>Technology:</strong> Python, SAP Business One Service Layer, SAP HANA and automated reporting.</p>
+        <p><strong>Development test results:</strong> A documented test covering 4,200 PDFs classified 11 for attachment processing, 4,154 as skipped and 35 for review. The 11 attachment attempts were refused by an SAP validation rule and were not successful attachments.</p>
+        <p><strong>Current status:</strong> Document scanning, matching, classification, integration and verification workflows have been developed and exercised in a development environment. Production deployment and resolution of the reported SAP validation issue remain outstanding.</p>
+      </section>
+
+      <h2>Design Principles</h2>
+      <ul>
+        <li><strong>Controlled processing:</strong> Use defined rules and approval steps for sensitive business operations.</li>
+        <li><strong>Validation:</strong> Check inputs and system responses rather than assuming a successful operation.</li>
+        <li><strong>Traceability:</strong> Retain processing outcomes, audit information and exception details.</li>
+        <li><strong>Exception handling:</strong> Separate records that can be processed from those requiring human review.</li>
+        <li><strong>Incremental delivery:</strong> Develop and test integrations before considering production use.</li>
+      </ul>
+
+      <h2>My Contribution</h2>
+      <p>Worked on analysing business workflows, shaping automation requirements, designing processing logic and integrating application workflows with enterprise systems. The work also involved reviewing test outcomes, identifying exceptions and documenting outstanding implementation requirements.</p>
+
+      <h2>Development Status and Next Steps</h2>
+      <ul>
+        <li>Complete the remaining integration validation for recurring invoice posting.</li>
+        <li>Resolve and retest the delivery-document validation exception.</li>
+        <li>Complete production-readiness checks, access arrangements and deployment planning.</li>
+        <li>Verify scheduled operation, reporting and exception handling in the intended operating environment.</li>
+      </ul>
+      <p>Both solutions are presented as development-stage work. Their inclusion does not imply that either has been approved for or deployed into a live production environment.</p>
+    </article>
+  </main>
+
+  <footer class="footer">
+    <p>Automation Hub · Project Documentation · Ogutu Jane</p>
+    <p><a href="../index.html#projects">Return to Portfolio</a></p>
+  </footer>
+</body>
+</html>
