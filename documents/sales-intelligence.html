@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Sales Intelligence project documentation: project profile, architecture, analytical methodology, dashboard functionality and operating guide.">
+  <meta name="author" content="Ogutu Jane">
+  <meta name="theme-color" content="#101D32">
+  <title>Sales Intelligence | Project Documentation — Ogutu Jane</title>
+  <style>
+    :root { --navy:#101D32; --blue:#2878c8; --ink:#263449; --muted:#64748b; --line:#e2e8f0; --paper:#ffffff; --soft:#f4f7fb; }
+    * { box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body { margin:0; background:var(--soft); color:var(--ink); font-family:Inter,Segoe UI,Arial,sans-serif; line-height:1.72; }
+    .topbar { position:sticky; top:0; z-index:10; background:rgba(16,29,50,.97); color:#fff; border-bottom:1px solid rgba(255,255,255,.12); }
+    .topbar-inner { max-width:1120px; margin:auto; padding:14px 24px; display:flex; justify-content:space-between; align-items:center; gap:16px; }
+    .brand { color:#fff; text-decoration:none; font-weight:800; letter-spacing:.02em; }
+    .back { color:#dbeafe; text-decoration:none; font-size:.92rem; font-weight:650; }
+    .back:hover { color:#fff; text-decoration:underline; }
+    .hero { background:linear-gradient(135deg,#101d32,#1c3b61); color:#fff; padding:58px 24px 52px; }
+    .hero-inner { max-width:920px; margin:auto; }
+    .eyebrow { color:#9cc9f7; font-size:.76rem; font-weight:800; letter-spacing:.16em; text-transform:uppercase; }
+    .hero h1 { margin:10px 0 8px; font-size:clamp(2rem,5vw,3.25rem); line-height:1.12; }
+    .hero p { max-width:760px; margin:10px 0 0; color:#d8e4f2; font-size:1.05rem; }
+    .meta { display:flex; flex-wrap:wrap; gap:10px; margin-top:22px; }
+    .meta span { border:1px solid rgba(255,255,255,.22); border-radius:999px; padding:5px 12px; color:#e6effa; font-size:.82rem; }
+    main { max-width:920px; margin:34px auto 72px; padding:0 20px; }
+    article { background:var(--paper); border:1px solid var(--line); border-radius:16px; padding:clamp(24px,5vw,54px); box-shadow:0 12px 36px rgba(16,29,50,.06); }
+    article h1 { display:none; }
+    h2 { margin:2.2em 0 .75em; padding-bottom:.45em; border-bottom:1px solid var(--line); color:var(--navy); font-size:1.65rem; line-height:1.3; }
+    h2:first-of-type { margin-top:.4em; }
+    h3 { margin:1.7em 0 .5em; color:#183c63; font-size:1.18rem; }
+    h4 { color:var(--navy); }
+    p { margin:.75em 0; }
+    li { margin:.35em 0; padding-left:.15em; }
+    ul,ol { padding-left:1.45em; }
+    a { color:var(--blue); }
+    strong { color:#1b2e48; }
+    code { background:#eef3f8; color:#1e4268; border-radius:5px; padding:.12em .35em; font-size:.9em; overflow-wrap:anywhere; }
+    pre { overflow-x:auto; background:#101d32; color:#e5edf7; border-radius:10px; padding:18px 20px; line-height:1.55; }
+    pre code { background:transparent; color:inherit; padding:0; }
+    table { width:100%; border-collapse:collapse; margin:1.2em 0 1.6em; font-size:.94rem; }
+    th,td { text-align:left; vertical-align:top; padding:11px 13px; border:1px solid var(--line); }
+    th { background:#eef3f8; color:var(--navy); font-weight:750; }
+    blockquote { margin:1.2em 0; padding:12px 18px; border-left:4px solid var(--blue); background:#f2f7fc; color:#334155; }
+    hr { border:0; border-top:1px solid var(--line); margin:2em 0; }
+    .footer { max-width:920px; margin:-42px auto 42px; padding:0 20px; color:var(--muted); text-align:center; font-size:.88rem; }
+    @media (max-width:640px) { .topbar-inner { padding:12px 16px; } .hero { padding:42px 20px; } main { margin-top:18px; padding:0 12px; } article { padding:22px 18px; border-radius:12px; } table { display:block; overflow-x:auto; white-space:normal; } }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a class="brand" href="../index.html">OJ.</a>
+      <a class="back" href="../index.html#projects">← Back to Projects</a>
+    </div>
+  </header>
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="eyebrow">Project Documentation</div>
+      <h1>Sales Intelligence</h1>
+      <p>Development, architecture, analytical methodology and operating guide.</p>
+      <div class="meta"><span>Python</span><span>Pandas</span><span>Excel</span><span>Streamlit</span><span>Plotly</span></div>
+    </div>
+  </section>
+  <main><article>
+<h1>SALES-INTELLIGENCE</h1>
+<h2>Project Documentation: Development, Architecture and Operating Guide</h2>
+<p><strong>Document purpose:</strong> Technical and portfolio documentation<br />
+<strong>Project type:</strong> Python-based sales intelligence, reconciliation and management dashboard<br />
+<strong>Dashboard framework:</strong> Streamlit<br />
+<strong>Primary analytical libraries:</strong> Pandas, Plotly and OpenPyXL</p>
+<hr />
+<h2>Project Profile</h2>
+<h3>1. What it does</h3>
+<p>Processes sales data to produce sales intelligence and management reporting. It analyses annual performance, regional sales, selling types, stockist information completeness and source-to-detail reconciliation. Results are presented through Excel outputs and an interactive dashboard.</p>
+<h3>2. Tools and systems it touches</h3>
+<ul>
+<li><strong>Python</strong> scripts for data processing and reconciliation.</li>
+<li><strong>Pandas</strong> for data cleaning, transformation and analysis.</li>
+<li><strong>Excel workbooks (<code>.xlsx</code>)</strong> as source, processing and reporting files.</li>
+<li><strong>OpenPyXL</strong> for Excel workbook handling.</li>
+<li><strong>Streamlit</strong> for the interactive dashboard.</li>
+<li><strong>Plotly</strong> for visualisations.</li>
+</ul>
+<p>The documented workflow does not currently include an external API, email integration or database connection.</p>
+<h3>3. When it runs</h3>
+<p><strong>On demand.</strong> A user manually launches the Streamlit dashboard and runs the Python processing scripts when required. The documented workflow is not configured as a scheduled or event-triggered automation.</p>
+<h3>4. Its status</h3>
+<p><strong>Completed — local runnable version.</strong> The project has a functioning local dashboard and supporting Excel outputs. It is not currently established as a continuously hosted production application or a scheduled automated service. Further improvements remain documented in the technical roadmap.</p>
+<hr />
+<h2>1. Project Overview</h2>
+<p>SALES-INTELLIGENCE is a Python-based sales intelligence solution developed to transform sales workbooks into structured analytical outputs and a management-facing dashboard.</p>
+<p>The project brings together two related but distinct analytical scopes:</p>
+<ul>
+<li><strong>Phase 16:</strong> transaction-level sales analysis.</li>
+<li><strong>Phase 18:</strong> official multi-year source reporting and reconciliation.</li>
+</ul>
+<p>The two scopes are deliberately kept separate. Their figures should not be added together or treated as directly equivalent without first confirming that their reporting periods, coverage and data granularity match.</p>
+<p>The solution uses Python and Pandas for data processing, Excel workbooks for structured outputs, and Streamlit with Plotly for interactive presentation.</p>
+<h3>1.1 Business objectives</h3>
+<p>The project is designed to help management:</p>
+<ul>
+<li>Review sales performance across reporting years.</li>
+<li>Examine sales distribution by region and selling type.</li>
+<li>Review stockist information completeness in the transaction-level dataset.</li>
+<li>Compare processed sales data with reported source totals.</li>
+<li>Identify differences that require investigation.</li>
+<li>View key results and management recommendations in one dashboard.</li>
+</ul>
+<h3>1.2 Intended users</h3>
+<p>The principal audience is management and business users who need a consolidated view of sales performance, reconciliation controls and data-quality observations. The project is also suitable as a technical portfolio example of applied data analysis and dashboard development.</p>
+<hr />
+<h2>2. Project Scope and Analytical Boundaries</h2>
+<h3>2.1 Phase 16 — transaction-level analysis</h3>
+<p>The Phase 16 workbook contains a cleaned transaction-level dataset and supporting analytical sheets. The reviewed workbook includes:</p>
+<ul>
+<li>Clean Transactions</li>
+<li>Sales by Region</li>
+<li>Missing Stockist Region</li>
+<li>Sales by Zone</li>
+<li>Selling Type</li>
+<li>Stockist Status</li>
+<li>Reconciliation</li>
+<li>Executive Answers</li>
+<li>Data Quality</li>
+</ul>
+<p>The reviewed workbook contains 266 data rows in the Clean Transactions sheet (267 worksheet rows including the header). Its reconciliation compares the calculated dataset total with the source control total.</p>
+<p>The reviewed Phase 16 results include a total of approximately <strong>KSh 2.889 billion</strong>. The workbook reports approximately <strong>89.87%</strong> of sales as missing stockist information and <strong>10.13%</strong> as identified stockist sales. These are figures in the reviewed workbook and should be interpreted in the context of that workbook's source period and classification rules.</p>
+<h3>2.2 Phase 18 — multi-year source reporting</h3>
+<p>Phase 18C reads the <code>Sell-in_RegionTownAreaCustomer</code> sheet from the original multi-year sales source workbook. The reviewed implementation uses the row containing the headers at Excel row 8 (<code>header=7</code> in Pandas).</p>
+<p>It identifies the official <code>GRAND TOTAL</code> row, extracts annual source totals, excludes <code>LOCAL SALES TOTAL</code> and <code>GRAND TOTAL</code> summary rows from analytical detail, and analyses the remaining regional and selling-type summary records.</p>
+<p>The Phase 18C source is aggregated by selling type and region. It is <strong>not</strong> a customer-level or transaction-level dataset. Although some code comments and labels use the phrase “transaction dataset”, the actual source structure reviewed contains approximately 18 aggregated detail rows per year. Documentation and portfolio descriptions should therefore call this multi-year aggregated source reporting, not multi-year transaction-level analysis.</p>
+<h3>2.3 Why the scopes remain separate</h3>
+<p>The Phase 16 and Phase 18 figures represent different analytical scopes and data granularities. In the earlier project versions, the 2026 source total and the Phase 16 processed total differed materially. The project therefore presents them separately and highlights the need to investigate coverage, aggregation rules and reporting-period equivalence before treating them as comparable.</p>
+<hr />
+<h2>3. Development History</h2>
+<p>The project evolved through several iterations. The phases below describe the development sequence represented by the scripts and workbooks in the repository.</p>
+<h3>3.1 Initial multi-year reconciliation</h3>
+<p>The earlier <code>phase18_year_reconciliation.py</code> implementation loaded the multi-year source sheet and summed the year columns directly. The reviewed code did not first exclude subtotal and grand-total rows. As a result, the original annual totals could include both detail and summary values, overstating the totals.</p>
+<p>This version exposed the importance of understanding the source workbook's hierarchy before aggregating it.</p>
+<h3>3.2 Phase 18A — source structure fix</h3>
+<p><code>phase18A_source_structure_fix.py</code> introduced source-cleaning steps, including standardising column names, converting year values to numeric values, cleaning text fields and removing rows identified as totals or subtotals.</p>
+<p>The reviewed Phase 18A logic also removed rows with blank regions and blank selling types. This is a limitation to consider because removing blank-region rows may exclude sales that are present in the source but not assigned to a region.</p>
+<h3>3.3 Phase 18B — final reconciliation</h3>
+<p><code>Phase18B_Final_Reconciliation/phase18b_final_reconciliation.py</code> improved the reconciliation approach by identifying the official <code>GRAND TOTAL</code> row and using it as the annual source control total. It excluded summary rows from detail calculations.</p>
+<p>The reviewed Phase 18B implementation removed blank-region detail rows before regional analysis. This can cause regional detail to omit sales with no region assignment, even where the source grand total includes them.</p>
+<h3>3.4 Phase 18C — corrected engine</h3>
+<p><code>Phase18C_Corrected_Engine/phase18c_corrected_engine.py</code> refined the process further:</p>
+<ol>
+<li>Reads the source sheet and required year columns.</li>
+<li>Converts annual sales columns to numeric values.</li>
+<li>Requires exactly one <code>GRAND TOTAL</code> row.</li>
+<li>Extracts the official annual totals from that row.</li>
+<li>Excludes <code>LOCAL SALES TOTAL</code> and <code>GRAND TOTAL</code> rows from detail.</li>
+<li>Retains non-summary detail rows, including rows with blank region values.</li>
+<li>Builds annual, regional, selling-type, stockist-field-completeness and other summary outputs.</li>
+<li>Compares calculated detail totals with the official source totals.</li>
+<li>Exports a structured Excel workbook.</li>
+</ol>
+<p>The corrected engine's reconciliation is a useful arithmetic control: it demonstrates that the retained detail sums to the selected official grand-total row within the configured tolerance. It does <strong>not</strong> independently prove that the source grand-total row is correct, that every source record is classified correctly, or that the source itself is complete.</p>
+<h3>3.5 Dashboard development</h3>
+<p>The repository contains two dashboard scripts:</p>
+<ul>
+<li>Root-level <code>phase18_dashboard.py</code>: an earlier presentation dashboard that reads <code>Phase18_MIKA_Year_Reconciliation.xlsx</code> and uses older hardcoded figures.</li>
+<li><code>Phase18_Dashboard/phase18_dashboard.py</code>: the dashboard selected by the Dev Container launch configuration. It reads the Phase 16 and Phase 18C workbooks and presents the newer management view.</li>
+</ul>
+<p>The nested dashboard is the configured entry point:</p>
+<pre><code class="language-powershell">py -m streamlit run .\Phase18_Dashboard\phase18_dashboard.py
+</code></pre>
+<p>The root-level dashboard should be treated as a legacy or alternate implementation unless the project owner decides otherwise.</p>
+<hr />
+<h2>4. System Architecture</h2>
+<h3>4.1 High-level architecture</h3>
+<pre><code class="language-text">                    SALES SOURCE WORKBOOKS
+                 (Phase 16 and Phase 18 source data)
+                              |
+                              v
+                    PYTHON DATA PROCESSING
+                       Pandas / Python
+                              |
+                +-------------+-------------+
+                |                           |
+                v                           v
+        PHASE 16 WORKBOOK             PHASE 18C ENGINE
+     Transaction-level analysis     Aggregated multi-year
+                                    source reporting
+                |                           |
+                +-------------+-------------+
+                              |
+                              v
+                    EXCEL ANALYTICAL OUTPUTS
+                              |
+                              v
+                    STREAMLIT DASHBOARD
+                       Plotly charts
+                              |
+                              v
+                    MANAGEMENT INFORMATION
+           Performance / reconciliation / data quality /
+                    observations / recommendations
+</code></pre>
+<h3>4.2 Main components</h3>
+<table>
+<thead>
+<tr>
+  <th>Component</th>
+  <th>Responsibility</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Python processing scripts</td>
+  <td>Read, clean, transform, analyse and export sales data.</td>
+</tr>
+<tr>
+  <td>Pandas</td>
+  <td>Tabular data cleaning, grouping, aggregation and reconciliation calculations.</td>
+</tr>
+<tr>
+  <td>Excel workbooks</td>
+  <td>Store source data, processed datasets, summaries, validation results and data dictionaries.</td>
+</tr>
+<tr>
+  <td>OpenPyXL</td>
+  <td>Excel workbook reading support used by Pandas.</td>
+</tr>
+<tr>
+  <td>Streamlit</td>
+  <td>Provides the interactive dashboard interface.</td>
+</tr>
+<tr>
+  <td>Plotly Express</td>
+  <td>Produces interactive charts and visualisations.</td>
+</tr>
+<tr>
+  <td>Ask MIKA</td>
+  <td>Provides keyword-based, predefined responses to selected sales questions.</td>
+</tr>
+</tbody>
+</table>
+<h3>4.3 Repository structure</h3>
+<p>The reviewed repository contains the following principal items:</p>
+<pre><code class="language-text">SALES-INTELLIGENCE/
+│
+├── .devcontainer/
+│   └── devcontainer.json
+│
+├── Phase18B_Final_Reconciliation/
+│   ├── phase18b_final_reconciliation.py
+│   └── Phase18B_MIKA_Final_Reconciliation.xlsx
+│
+├── Phase18C_Corrected_Engine/
+│   ├── phase18c_corrected_engine.py
+│   └── Phase18C_MIKA_Corrected_Intelligence.xlsx
+│
+├── Phase18_Dashboard/
+│   ├── phase18_dashboard.py
+│   └── requirements.txt
+│
+├── presentation/
+│   └── MIKA Sales Intelligence_report.docx
+│
+├── Phase16_MIKA_Sales_Intelligence_Engine.xlsx
+├── phase18A_source_structure_fix.py
+├── Phase18A_Source_Structure_Fix.xlsx
+├── phase18_dashboard.py
+├── Phase18_MIKA_Year_Reconciliation.xlsx
+├── phase18_year_reconciliation.py
+├── README.md
+└── .gitignore
+</code></pre>
+<p>The exact contents should be checked against the current working copy before publishing a new repository tree. The project review found 16 files in the original extracted project at the time of backup.</p>
+<hr />
+<h2>5. Data Processing and Analytical Methodology</h2>
+<h3>5.1 Source loading</h3>
+<p>The Phase 18C engine reads the <code>Sell-in_RegionTownAreaCustomer</code> sheet using Pandas. It expects the source headers on the eighth worksheet row and uses specific year-column names for 2023, 2024, 2025 and 2026.</p>
+<p>The script currently contains hardcoded Windows source and output paths. This means a user must adapt those paths or provide the expected source file in the configured location before running the engine. The engine was reviewed as code; it was not rerun as part of this documentation exercise.</p>
+<h3>5.2 Numeric and text cleaning</h3>
+<p>The engine converts annual sales columns to numeric values, coercing invalid values and replacing missing numeric values with zero. This supports aggregation but should be accompanied by data-quality checks in a production-grade workflow, since coercion can conceal unexpected source values if those values are not separately logged.</p>
+<h3>5.3 Summary-row handling</h3>
+<p>The Phase 18C engine excludes rows whose selling type is <code>LOCAL SALES TOTAL</code> or <code>GRAND TOTAL</code> from the analytical detail dataset. It uses the <code>GRAND TOTAL</code> row separately as the official annual control total.</p>
+<p>The engine requires exactly one grand-total row. If zero or multiple matching rows are found, processing stops with an error rather than silently selecting one.</p>
+<h3>5.4 Regional analysis</h3>
+<p>The engine groups detail by region and reporting year and calculates sales values and shares against the official source total. Phase 18C retains blank-region rows in its multi-year detail, unlike Phase 18B. The regional summary itself should be reviewed to ensure that unassigned-region sales are visible and not mistaken for a named geographical region.</p>
+<h3>5.5 Selling-type analysis</h3>
+<p>The engine groups sales by selling type and reporting year. The reviewed 2026 output includes Local Sales, Export Sales and After Sales. These values are aggregated source categories, not individual customer transactions.</p>
+<h3>5.6 Stockist information completeness</h3>
+<p>The Phase 18C engine checks the availability of these fields:</p>
+<ul>
+<li><code>Stockist /Customer Chain Name</code></li>
+<li><code>Stockist Branch SAP Code</code></li>
+<li><code>Stockist SAP Code</code></li>
+</ul>
+<p>A row is marked as identified if at least one available field contains a nonblank value; otherwise it is marked as missing.</p>
+<p>In the reviewed Phase 18C workbook, the source's aggregated rows have blank stockist fields, resulting in 100% of Phase 18C sales being labelled Missing Stockist. This should <strong>not</strong> be interpreted as evidence that all actual customers or transactions lack stockist identification. The Phase 18C input is aggregated and does not provide the same customer-level detail as Phase 16.</p>
+<h3>5.7 Reconciliation</h3>
+<p>For each reporting year, the engine:</p>
+<ol>
+<li>Reads the official grand total from the source summary row.</li>
+<li>Sums the retained analytical detail rows.</li>
+<li>Calculates the difference between calculated and official totals.</li>
+<li>Marks the year PASS when the absolute difference is less than 1 currency unit; otherwise FAIL.</li>
+</ol>
+<p>A PASS indicates arithmetic agreement between the selected source control row and the retained detail. It is not an independent audit or proof of source completeness.</p>
+<hr />
+<h2>6. Workbook Outputs</h2>
+<p>The reviewed Phase 18C output workbook contains these 12 sheets:</p>
+<ol>
+<li>Annual Sales</li>
+<li>Executive Summary</li>
+<li>Current 2026 Summary</li>
+<li>Sales by Region</li>
+<li>Selling Type</li>
+<li>Stockist Status</li>
+<li>Missing Stockist Region</li>
+<li>Sales by Zone</li>
+<li>Clean Multi Year Data</li>
+<li>Year Validation</li>
+<li>Source Totals</li>
+<li>Data Dictionary</li>
+</ol>
+<p>The Phase 16 workbook contains transaction-level analysis and supporting summaries, including the Clean Transactions sheet, regional and zone analysis, stockist status, data quality and reconciliation.</p>
+<p>These workbooks provide the dashboard with structured analytical outputs and preserve supporting detail for review.</p>
+<hr />
+<h2>7. Dashboard Functionality</h2>
+<p>The configured dashboard is located at:</p>
+<p><code>Phase18_Dashboard/phase18_dashboard.py</code></p>
+<p>The dashboard reads:</p>
+<ul>
+<li><code>Phase16_MIKA_Sales_Intelligence_Engine.xlsx</code></li>
+<li><code>Phase18C_Corrected_Engine/Phase18C_MIKA_Corrected_Intelligence.xlsx</code></li>
+</ul>
+<p>The reviewed dashboard includes management-facing sales indicators, charts and explanatory sections. It also includes an Ask MIKA question interface.</p>
+<h3>7.1 Ask MIKA — implementation description</h3>
+<p>Ask MIKA uses keyword rules and predefined responses in the <code>answer_question()</code> function. It is not an LLM-powered assistant and does not perform unrestricted natural-language analysis of the workbooks. It should be described as a rule-based or FAQ-style question interface.</p>
+<h3>7.2 Static and hardcoded dashboard values</h3>
+<p>The code review identified hardcoded control figures and manually constructed chart data in the dashboard. Some displayed Phase 18 chart values are approximate/manual values rather than dynamically generated from the Phase 18C workbook sheets. The dashboard therefore needs a data-binding and reconciliation improvement before it can be described as fully dynamic.</p>
+<p>The reviewed dashboard also contains a sensible warning about comparing a 2026 year-to-date figure with a full prior year. That warning should be retained and made more explicit wherever year-on-year comparisons are displayed.</p>
+<hr />
+<h2>8. Technology Stack</h2>
+<table>
+<thead>
+<tr>
+  <th>Technology</th>
+  <th>Use in the project</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Python</td>
+  <td>Application logic and data processing.</td>
+</tr>
+<tr>
+  <td>Pandas</td>
+  <td>Data cleaning, transformations, grouping, aggregation and reconciliation.</td>
+</tr>
+<tr>
+  <td>Streamlit</td>
+  <td>Dashboard application and interactive controls.</td>
+</tr>
+<tr>
+  <td>Plotly Express</td>
+  <td>Interactive charts.</td>
+</tr>
+<tr>
+  <td>OpenPyXL</td>
+  <td>Excel file engine used by Pandas.</td>
+</tr>
+<tr>
+  <td>Microsoft Excel (<code>.xlsx</code>)</td>
+  <td>Source and analytical workbooks.</td>
+</tr>
+<tr>
+  <td>PowerShell</td>
+  <td>Local project setup and launch commands used during review.</td>
+</tr>
+</tbody>
+</table>
+<p>The dashboard's <code>requirements.txt</code> currently lists:</p>
+<pre><code class="language-text">streamlit
+pandas
+plotly
+openpyxl
+</code></pre>
+<p>For reproducible deployments, dependency versions should be pinned and the requirements file should be placed where the deployment environment expects to find it.</p>
+<hr />
+<h2>9. Installation and Running the Dashboard</h2>
+<h3>9.1 Prerequisites</h3>
+<ul>
+<li>Windows, macOS or Linux.</li>
+<li>Python installed.</li>
+<li>Access to the project folder.</li>
+<li>The required Excel workbooks included in the repository.</li>
+<li>The packages listed in the dashboard requirements file.</li>
+</ul>
+<h3>9.2 Install dependencies</h3>
+<p>From the project root, the current dependency file is in <code>Phase18_Dashboard</code>. One way to install its packages is:</p>
+<pre><code class="language-powershell">py -m pip install -r .\Phase18_Dashboard\requirements.txt
+</code></pre>
+<p>For an isolated environment, create and activate a virtual environment first:</p>
+<pre><code class="language-powershell">py -m venv .venv
+.\.venv\Scripts\Activate.ps1
+py -m pip install -r .\Phase18_Dashboard\requirements.txt
+</code></pre>
+<h3>9.3 Launch</h3>
+<p>From the project root:</p>
+<pre><code class="language-powershell">py -m streamlit run .\Phase18_Dashboard\phase18_dashboard.py
+</code></pre>
+<p>Streamlit normally prints a local address such as:</p>
+<p><code>http://localhost:8501</code></p>
+<p>Open the address in a web browser.</p>
+<h3>9.4 Stop the dashboard</h3>
+<p>Return to the terminal where Streamlit is running and press:</p>
+<p><code>Ctrl + C</code></p>
+<h3>9.5 Important distinction: dashboard versus data engine</h3>
+<p>Launching the dashboard does not automatically rerun the Phase 18C data-processing engine. The dashboard reads existing Excel outputs. To refresh the analytical workbooks, the processing scripts must be run separately after their source and output paths have been configured and the input data has been checked.</p>
+<p>The Phase 18C engine currently uses hardcoded Windows paths. Do not run it on another computer without first confirming and updating those paths and the source workbook.</p>
+<hr />
+<h2>10. Validation and Review Findings</h2>
+<p>The code and workbook review established the following:</p>
+<ul>
+<li>The Phase 18C workbook's annual calculated totals agree with its selected official grand-total values to within the configured tolerance for 2023–2026.</li>
+<li>The reviewed Phase 16 workbook also contains a reconciliation result with a negligible difference between its calculated and source control totals.</li>
+<li>Phase 16 and Phase 18C have different data granularity and should remain separate.</li>
+<li>Phase 18C stockist completeness is based on fields in aggregated source rows and is not a customer-level stockist audit.</li>
+<li>The Phase 18C source-to-detail PASS result is an arithmetic reconciliation, not an independent source audit.</li>
+<li>The nested dashboard is the entry point configured in <code>.devcontainer/devcontainer.json</code>.</li>
+<li>The Dev Container installation command looks for a root-level <code>requirements.txt</code>, while the reviewed dependency file is under <code>Phase18_Dashboard</code>. This configuration should be aligned before relying on a fresh Codespaces setup.</li>
+<li>The root dashboard and nested dashboard are different implementations. The nested dashboard is the configured entry point.</li>
+<li>The dashboard was successfully launched locally from the renamed <code>SALES-INTELLIGENCE</code> folder during the review.</li>
+</ul>
+<hr />
+<h2>11. Known Limitations and Recommended Improvements</h2>
+<h3>11.1 Dynamic dashboard data</h3>
+<p>Replace hardcoded headline figures and manually constructed chart data with values read directly from the relevant workbook sheets. Add checks that compare dashboard KPIs with workbook control totals.</p>
+<h3>11.2 Reproducible file paths</h3>
+<p>Replace hardcoded user-specific source and output paths in the processing scripts with paths derived from the project directory or configurable settings.</p>
+<h3>11.3 Dependency and deployment configuration</h3>
+<p>Move or duplicate the requirements file to the location expected by the deployment configuration, and pin tested package versions. Confirm a clean environment can install and launch the dashboard.</p>
+<h3>11.4 Data-quality logging</h3>
+<p>Record invalid numeric values, missing categories, blank regions, duplicate summary rows and other unexpected source structures before coercing or excluding data.</p>
+<h3>11.5 Stockist classification</h3>
+<p>Use transaction-level data for customer/stockist completeness analysis. Keep aggregated Phase 18 records clearly labelled as not suitable for customer-level stockist conclusions.</p>
+<h3>11.6 Ask MIKA</h3>
+<p>If more advanced conversational analytics are required, replace or extend the keyword-based response rules with a controlled analytical query layer. Any future AI integration should use validated data, explicit calculation logic and traceable sources.</p>
+<h3>11.7 Year-to-date comparisons</h3>
+<p>Show the reporting cut-off date and period coverage for each year. Avoid comparing a partial year with a full year without clear qualification or like-for-like period matching.</p>
+<h3>11.8 Automated testing</h3>
+<p>Add tests for summary-row detection, annual total extraction, numeric conversion, blank-region retention, reconciliation tolerance, stockist classification and dashboard KPI calculations.</p>
+<hr />
+<h2>12. Business Value and Portfolio Description</h2>
+<p>The project demonstrates the application of Python-based data processing and dashboard development to a practical sales reporting problem.</p>
+<p>It brings together data cleaning, multi-year aggregation, source-to-detail reconciliation, regional and selling-type analysis, data-quality assessment, Excel reporting and interactive management presentation.</p>
+<h3>Suggested portfolio description</h3>
+<blockquote>
+<p>Developed a Python-based sales intelligence and reconciliation solution using Pandas, Excel and Streamlit. The solution processes sales datasets, separates reporting summaries from analytical detail, performs source-to-detail reconciliation, analyses regional and selling-type performance, assesses stockist information completeness, and presents management reporting through Excel outputs and an interactive dashboard.</p>
+</blockquote>
+<p>This description deliberately avoids claiming that all years are transaction-level, that the dashboard is fully dynamic, or that Ask MIKA is an AI-powered assistant.</p>
+<hr />
+<h2>13. Backup and Project Preservation</h2>
+<p>During the local review, a full copy of the original extracted project was created and verified before the working folder was renamed.</p>
+<p>The working project was moved to:</p>
+<p><code>C:\Users\User\Desktop\SALES-INTELLIGENCE</code></p>
+<p>The verified backup was retained at:</p>
+<p><code>C:\Users\User\Desktop\MIKA-Phase18-Review\BACKUP_MIKA_PHASE18_20261126_165351</code></p>
+<p>The backup verification compared the number of files and total file size. For stronger long-term integrity assurance, a checksum-based comparison can also be performed.</p>
+<p>The local folder rename does not automatically rename or update the GitHub repository. Repository changes must be performed separately.</p>
+<hr />
+<h2>14. Final Summary</h2>
+<p>SALES-INTELLIGENCE is a Python, Pandas, Excel and Streamlit solution for sales intelligence and management reporting. Its development progressed through multiple reconciliation iterations, culminating in a Phase 18C engine that uses an official source grand-total row as a control and retains non-summary detail rows for analysis.</p>
+<p>The project has a functioning local dashboard and supporting Excel outputs. Its strongest demonstrated capabilities are data processing, source-to-detail arithmetic reconciliation, regional and selling-type summaries, stockist-field completeness assessment and management-facing visualisation.</p>
+<p>The most important next technical improvements are to make dashboard figures fully workbook-driven, align deployment dependencies, make file paths configurable, strengthen data-quality logging and clearly distinguish aggregated reporting from transaction-level analysis.</p>
+<p><strong>Documentation status:</strong> Prepared from the repository code, workbook structure and local execution checks reviewed during the project assessment. Recheck paths, source data and deployment configuration against the current repository before publishing or handing over the project.</p>
+
+  </article></main>
+  <div class="footer">Sales Intelligence · Project documentation · Ogutu Jane</div>
+</body>
+</html>
