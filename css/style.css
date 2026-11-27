@@ -1,6 +1,6 @@
 
 /* ==========================================
-   OGUTU JANE — PERSONAL PORTFOLIO
+   OGUTU JANE - PERSONAL PORTFOLIO
    Modern Hybrid Corporate Technology Design
 ========================================== */
 
@@ -745,6 +745,30 @@ button {
 .project-info > p:not(.project-type) {
     color: var(--muted);
     font-size: 0.9rem;
+}
+
+.project-info .project-status {
+    color: var(--blue);
+    font-size: 0.82rem;
+    font-weight: 700;
+    margin-top: 18px;
+}
+
+.project-link {
+    display: inline-block;
+    margin-top: 14px;
+    color: var(--blue);
+    font-size: 0.88rem;
+    font-weight: 700;
+    text-decoration: none;
+    border-bottom: 1px solid var(--blue);
+    padding-bottom: 3px;
+    transition: var(--transition);
+}
+
+.project-link:hover {
+    color: var(--navy);
+    border-color: var(--navy);
 }
 
 .projects-note {
